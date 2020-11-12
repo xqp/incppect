@@ -78,7 +78,7 @@ struct Incppect<SSL>::Impl {
         wsBehaviour.compression = uWS::SHARED_COMPRESSOR;
         wsBehaviour.maxPayloadLength = parameters.maxPayloadLength_bytes;
         wsBehaviour.idleTimeout = parameters.tIdleTimeout_s;
-        wsBehaviour.open = [&](auto * ws, auto * /*req*/) {
+        wsBehaviour.open = [&](auto * ws) {
             static int32_t uniqueId = 1;
             ++uniqueId;
 
